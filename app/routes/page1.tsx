@@ -4,19 +4,19 @@ import { getData } from "~/services/data.server";
 
 export const loader = () => {
   return defer({
-    title: "Index",
+    title: "Page1",
     data: getData(),
   })
 }
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Index" },
-    { name: "description", content: "Index" },
+    { title: "Page1" },
+    { name: "description", content: "Page1" },
   ];
 };
 
-export default function Index() {
+export default function Page1() {
   let data = useLoaderData<typeof loader>()
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
