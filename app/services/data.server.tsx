@@ -8,12 +8,22 @@ export async function getData() {
 }
 
 const data = function* () {
-  for (let i in [1,2,3]) {
+  let numbers = [...Array(30).keys()]
+  for (let i in numbers) {
     yield new Promise((resolve, _) => {
       setTimeout(() => {
-        console.log('out ' + i)
-        resolve(i)
-      }, 1000)
+        resolve(str())
+      }, 100)
     })
   }
+}
+
+export function str() {
+  let s = ""
+
+  for (let i = 0; i < 10000; i++) {
+    s += (Math.random() + 1).toString(36).substring(7) + "\n"
+  }
+
+  return s
 }

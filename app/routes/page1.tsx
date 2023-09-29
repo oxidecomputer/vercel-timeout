@@ -1,11 +1,12 @@
 import { defer, json, type MetaFunction } from "@remix-run/node";
 import { Link, useLoaderData } from "@remix-run/react";
-import { getData } from "~/services/data.server";
+import { getData, str } from "~/services/data.server";
 
 export const loader = () => {
   return defer({
     title: "Page1",
-    data: getData(),
+    sync_data: str(),
+    async_data: getData(),
   })
 }
 
@@ -26,6 +27,9 @@ export default function Page1() {
         <li><Link to="/page1">Page 1</Link></li>
         <li><Link to="/page2">Page 2</Link></li>
       </ul>
+      <main>
+        { data.sync_data }
+      </main>
     </div>
   );
 }
