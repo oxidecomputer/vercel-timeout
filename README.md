@@ -7,10 +7,10 @@ range, the response gets cut off and the page spins for a minute until something
 times out.
 
 * ... every smaller number I tried was good
-* good https://vercel-timeout.vercel.app/?size=16180
-* bad https://vercel-timeout.vercel.app/?size=16181
+* good https://vercel-timeout-iic9ppj5s-oxidecomputer.vercel.app/?size=16180
+* bad https://vercel-timeout-iic9ppj5s-oxidecomputer.vercel.app/?size=16181
 * ... every number I tried in this range is bad
-* bad https://vercel-timeout.vercel.app/?size=64344
-* good https://vercel-timeout.vercel.app/?size=64345
+* bad https://vercel-timeout-iic9ppj5s-oxidecomputer.vercel.app/?size=64344
+* good https://vercel-timeout-iic9ppj5s-oxidecomputer.vercel.app/?size=64345
 * ... every bigger number I tried was good
 
