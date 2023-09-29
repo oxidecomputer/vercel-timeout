@@ -1,27 +1,27 @@
-export async function getData() {
+export async function getData(size: number) {
   let out = []
-  for (let i of data()) {
+  for (let i of data(size)) {
     out.push(await i)
   }
 
   return out
 }
 
-const data = function* () {
+const data = function* (size: number) {
   let numbers = [...Array(30).keys()]
   for (let i in numbers) {
     yield new Promise((resolve, _) => {
       setTimeout(() => {
-        resolve(str())
+        resolve(str(size))
       }, 100)
     })
   }
 }
 
-export function str() {
+export function str(size: number) {
   let s = ""
 
-  for (let i = 0; i < 10000; i++) {
+  for (let i = 0; i < size; i++) {
     s += (Math.random() + 1).toString(36).substring(7) + "\n"
   }
 

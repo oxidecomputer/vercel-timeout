@@ -2,11 +2,13 @@ import { defer, json, type MetaFunction } from "@remix-run/node";
 import { Link, useLoaderData } from "@remix-run/react";
 import { getData, str } from "~/services/data.server";
 
-export const loader = () => {
+export const loader = ({ request }: { request: Request }) => {
+  let url = new URL(request.url)
+  let size = parseInt(url.searchParams.get('size') || '10')
   return defer({
     title: "Index",
-    sync_data: str(),
-    async_data: getData(),
+    sync_data: str(size),
+    async_data: getData(size),
   })
 }
 
